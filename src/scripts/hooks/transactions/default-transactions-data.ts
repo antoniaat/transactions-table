@@ -26,11 +26,14 @@ const defaltTransactionData = [
 ];
 
 const defaultTransactionsData = {
-    id: 0,
-    transactions: fillArrayWithObjects(defaltTransactionData, 10, (transaction: Object, i: number) => ({
-        ...transaction,
-        id: i,
-    })),
+  transactions: fillArrayWithObjects(
+    defaltTransactionData,
+    10,
+    (transaction: Object, i: number) => ({
+      ...transaction,
+      id: i,
+    })
+  ),
 };
 
 export default defaultTransactionsData;
