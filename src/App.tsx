@@ -1,11 +1,9 @@
-import React from 'react';
+import TransactionsTable from './scripts/components/transactions-table';
 
 function App() {
   return (
-    <div className="App">
-      <h1>
-        wudhuwassash
-      </h1>
+    <div>
+      <TransactionsTable />
     </div>
   );
 }
