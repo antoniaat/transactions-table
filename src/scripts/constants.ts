@@ -23,7 +23,8 @@ const emptyTransaction = {
   updated_at: "",
 }
 
-export const defaultTransactionsData: TransactionResponse = {
+const defaultTransactionsData: TransactionResponse = {
   transactions: new Array(10).fill(emptyTransaction),
 };
 
+export { defaultTransactionsData }
