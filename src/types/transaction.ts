@@ -27,4 +27,4 @@ interface TransactionResponse {
   transactions: Transaction[];
 }
 
-export { TransactionResponse };
+export type { TransactionResponse };
