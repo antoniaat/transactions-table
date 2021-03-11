@@ -1,5 +1,4 @@
-import React from 'react';
 import ReactDOM from "react-dom";
-import App from "./App";
+import Transactions from "./views/Transactions";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Transactions />, document.getElementById("root"));

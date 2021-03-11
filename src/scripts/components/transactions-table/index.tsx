@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { Column } from "react-table";
-import {  TableCell as TableCellProps } from "../../../types/table";
+import { TableCell as TableCellProps } from "../../../types/table";
 import { Transaction } from "../../../types/transaction";
 import useTransactions from "../../hooks/transactions/use-transactions";
 import Table from "../table";
