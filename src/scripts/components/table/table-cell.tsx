@@ -3,11 +3,12 @@ import { TableCell as TableCellProps } from "../../../types/table";
 import DataLoadingContext from "../contexts/data-loading-context";
 import ContentLoading from "../content-loading";
 
-const TableCell: React.FC<TableCellProps> = ({ value, label }) => {
+const TableCell: React.FC<TableCellProps> = ({ value, label, children }) => {
   const { isLoadingTransactions } = useContext(DataLoadingContext);
 
   return (
     <td className="table-cell" data-label={label}>
+      {children}
       <ContentLoading text={value} isLoading={isLoadingTransactions} />
     </td>
   );

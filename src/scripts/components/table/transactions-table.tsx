@@ -1,4 +1,4 @@
-import '../../../styles/components/table/transactions-table.scss';
+import "../../../styles/components/table/transactions-table.scss";
 
 import React, { useMemo } from "react";
 import { Column } from "react-table";
@@ -15,8 +15,17 @@ const TransactionsTable = () => {
 
   const sourceColumn: Column<Transaction> = {
     Header: <ContentLoading text="Source" isLoading={isLoadingTransactions} />,
-    accessor: "description",
-    Cell: (props: TableCellProps) => <TableCell {...props} label="source" />,
+    accessor: 'description',
+    Cell: (props: TableCellProps) => {
+      const { gateway, description } = props.row.original;
+
+      return (
+          <TableCell {...props} label="source">
+            {gateway}
+            {description}
+          </TableCell>
+      )
+    }
   };
 
   const categoryColumn: Column<Transaction> = {
