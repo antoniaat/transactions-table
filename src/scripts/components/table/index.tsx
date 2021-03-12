@@ -1,8 +1,12 @@
-import '../../../styles/components/table/table.scss';
+import "../../../styles/components/table/table.scss";
 
 import * as React from "react";
 import { useTable, useSortBy } from "react-table";
 import { Table as TableProps } from "../../../types/table";
+import TableCellDescSort from "./table-cell-desc-sort";
+
+const tableHeader = "Header";
+const tableCell = "Cell";
 
 const Table: React.FC<TableProps> = ({ columns, data }) => {
   const {
@@ -25,11 +29,14 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
         {headerGroups.map((headerGroup) => (
           <tr className="table-row" {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
-                {column.render("Header")}
-                <span>
-                  {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
-                </span>
+              <th
+                className="table-cell"
+                {...column.getHeaderProps(column.getSortByToggleProps())}
+              >
+                {column.render(tableHeader)}
+                {column.isSorted && (
+                  <TableCellDescSort isSortedDesc={column.isSortedDesc} />
+                )}
               </th>
             ))}
           </tr>
@@ -38,15 +45,10 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
       <tbody className="table-body" {...getTableBodyProps()}>
         {rows.map((row, i) => {
           prepareRow(row);
+
           return (
             <tr className="table-row" {...row.getRowProps()}>
-              {row.cells.map((cell) => {
-                return (
-                  <td className="table-cell" {...cell.getCellProps()}>
-                    {cell.render("Cell")}
-                  </td>
-                );
-              })}
+              {row.cells.map((cell) => cell.render(tableCell))}
             </tr>
           );
         })}
