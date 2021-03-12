@@ -24,7 +24,7 @@ const emptyTransaction = {
 }
 
 const defaultTransactionsData: TransactionResponse = {
-  transactions: new Array(10).fill(emptyTransaction),
+  transactions: new Array(5).fill(emptyTransaction),
 };
 
 export { defaultTransactionsData }
