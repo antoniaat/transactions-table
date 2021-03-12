@@ -1,0 +1,9 @@
+$regular: '-Regular';
+$light: '-Light';
+$bold: '-Bold';
+
+$primary-font: 'Inter';
+
+$primary-font-default: $primary-font+$regular;
+$primary-font-bold: $primary-font+$bold;
+$primary-font-light: $primary-font+$light;
