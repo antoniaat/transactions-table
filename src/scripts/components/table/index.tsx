@@ -18,10 +18,10 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
   );
 
   return (
-    <table {...getTableProps()}>
-      <thead>
+    <table className="table" {...getTableProps()}>
+      <thead className="table-header">
         {headerGroups.map((headerGroup) => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
+          <tr className="table-row" {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <th {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render("Header")}
@@ -33,13 +33,17 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
           </tr>
         ))}
       </thead>
-      <tbody {...getTableBodyProps()}>
+      <tbody className="table-body" {...getTableBodyProps()}>
         {rows.map((row, i) => {
           prepareRow(row);
           return (
-            <tr {...row.getRowProps()}>
+            <tr className="table-row" {...row.getRowProps()}>
               {row.cells.map((cell) => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                return (
+                  <td className="table-cell" {...cell.getCellProps()}>
+                    {cell.render("Cell")}
+                  </td>
+                );
               })}
             </tr>
           );
