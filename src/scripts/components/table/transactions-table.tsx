@@ -1,12 +1,14 @@
+import '../../../styles/components/table/transactions-table.scss';
+
 import React, { useMemo } from "react";
 import { Column } from "react-table";
 import { TableCell as TableCellProps } from "../../../types/table";
 import { Transaction } from "../../../types/transaction";
 import useTransactions from "../../hooks/transactions/use-transactions";
 import ContentLoading from "../content-loading";
-import TableCell from "../table/table-cell";
-import Table from "../table";
-import DataLoadingContext from '../contexts/data-loading-context';
+import TableCell from "./table-cell";
+import Table from ".";
+import DataLoadingContext from "../contexts/data-loading-context";
 
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();
@@ -46,7 +48,9 @@ const TransactionsTable = () => {
 
   return (
     <DataLoadingContext.Provider value={{ isLoadingTransactions }}>
-      <Table columns={columns} data={memoizedTransactions} />
+      <section className="transactions-table">
+        <Table columns={columns} data={memoizedTransactions} />
+      </section>
     </DataLoadingContext.Provider>
   );
 };
