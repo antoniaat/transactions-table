@@ -7,7 +7,7 @@ const count = 1;
 
 interface Props {
   isLoading: boolean;
-  text?: string;
+  text?: string | number;
 }
 
 const ContentLoading: React.FC<Props> = ({

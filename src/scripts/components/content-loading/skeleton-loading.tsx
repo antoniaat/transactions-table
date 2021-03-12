@@ -10,7 +10,7 @@ interface Props {
 const SkeletonLoading: React.FC<Props> = ({ width = 100, height = 100, count = 1 }) => {
   return (
     <span className="skeleton-loading-wrapper">
-      <SkeletonTheme color="#CFDAE7" highlightColor="#fff">
+      <SkeletonTheme color="#CFDAE7">
         <Skeleton width={width} height={height} count={count} />
       </SkeletonTheme>
     </span>
