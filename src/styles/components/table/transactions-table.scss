@@ -3,4 +3,11 @@
     justify-content: center;
     margin-top: 120px;
     text-align: left;
+
+    &-source {
+        display: grid;
+        grid-auto-flow: column;
+        align-items: center;
+        grid-template-columns: min-content 1fr;
+    }
 }

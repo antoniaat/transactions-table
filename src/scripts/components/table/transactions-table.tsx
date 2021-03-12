@@ -1,31 +1,33 @@
 import "../../../styles/components/table/transactions-table.scss";
 
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { Column } from "react-table";
+import useTransactions from "../../hooks/transactions/use-transactions";
 import { TableCell as TableCellProps } from "../../../types/table";
 import { Transaction } from "../../../types/transaction";
-import useTransactions from "../../hooks/transactions/use-transactions";
-import ContentLoading from "../content-loading";
-import TableCell from "./table-cell";
-import Table from ".";
 import DataLoadingContext from "../contexts/data-loading-context";
+import ContentLoading from "../content-loading";
+import TransactionsTableGateway from "./transactions-table-gateway";
+import TableCell from "./table-cell";
+import Table from "./index";
 
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();
 
+  const sourceColumnCell = (props: TableCellProps) => {
+    const { gateway } = props.row.original;
+
+    return (
+      <TableCell {...props} className="transactions-table-source" label="source">
+        <TransactionsTableGateway gateway={gateway} />
+      </TableCell>
+    );
+  };
+
   const sourceColumn: Column<Transaction> = {
     Header: <ContentLoading text="Source" isLoading={isLoadingTransactions} />,
-    accessor: 'description',
-    Cell: (props: TableCellProps) => {
-      const { gateway, description } = props.row.original;
-
-      return (
-          <TableCell {...props} label="source">
-            {gateway}
-            {description}
-          </TableCell>
-      )
-    }
+    accessor: "description",
+    Cell: sourceColumnCell,
   };
 
   const categoryColumn: Column<Transaction> = {

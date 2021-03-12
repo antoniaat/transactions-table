@@ -8,6 +8,7 @@ interface RowOriginal {
 interface TableCell {
   value: number | string;
   label: string;
+  className?: string,
   row: RowOriginal
 }
 
