@@ -1,3 +1,5 @@
+import '../../../styles/components/table/table.scss';
+
 import * as React from "react";
 import { useTable, useSortBy } from "react-table";
 import { Table as TableProps } from "../../../types/table";

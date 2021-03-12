@@ -1,3 +1,11 @@
+@import '../../base/tools/variables.scss';
+
 .table {
+    border: 1px solid $gray-300;
+    border-collapse: collapse;
     
+    &-row {
+        border-bottom: 1px solid $gray-300;
+        padding: 15px;
+    }
 }
