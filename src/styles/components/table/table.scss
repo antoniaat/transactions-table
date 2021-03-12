@@ -6,6 +6,9 @@
     
     &-row {
         border-bottom: 1px solid $gray-300;
-        padding: 15px;
+    }
+
+    &-cell {
+        padding: 10px;
     }
 }
