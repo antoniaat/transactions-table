@@ -14,6 +14,7 @@ import TransactionsTableGateway from "./transactions-table-gateway";
 import TableCell from "./table-cell";
 import Table from "./index";
 import TransactionsTableDate from "./transactions-table-date";
+import TransactionsTableAmount from "./transactions-table-amount";
 
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();
@@ -52,12 +53,20 @@ const TransactionsTable = () => {
     ),
   };
 
+  const amountColumnCell = (props: TableCellProps) => {
+    const { amount, currency_code } = props.row.original;
+
+    return (
+      <TableCell {...props} label="source">
+        <TransactionsTableAmount amount={amount} currencyCode={currency_code} />
+      </TableCell>
+    );
+  };
+
   const amountColumn: Column<Transaction> = {
     Header: <ContentLoading text="Amount" isLoading={isLoadingTransactions} />,
-    accessor: "amount",
-    Cell: (props: TableCellProps) => (
-      <TableCell {...props} renderValue={categoryColumnCell} label="amount" />
-    ),
+    accessor: "gateway",
+    Cell: amountColumnCell,
   };
 
   const dateColumnCell = (value: TableCellValue) => (

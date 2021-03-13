@@ -1,0 +1,41 @@
+@import '../../base/tools/variables.scss';
+@import '../../base/tools/mixins.scss';
+
+.transactions-table-amount {
+    position: relative;
+
+    &-value {
+        padding-right: 5px;
+        font-weight: bold;
+    }
+
+    &-incoming,
+    &-outgoing {
+        &::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            position: absolute;
+            left: -18px;
+            top: 18px;
+        }
+    }
+
+    &-incoming {
+        color: $green-500;
+
+        &::before {
+            border-bottom: 5px solid $green-500;
+        }
+    }
+
+    &-outgoing {
+        color: $red-500;
+
+        &::before {
+            border-top: 5px solid $red-500;
+        }
+    }
+}
