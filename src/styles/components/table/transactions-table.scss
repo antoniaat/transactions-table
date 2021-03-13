@@ -20,4 +20,11 @@
         padding: 5px;
         border-radius: 4px;
     }
+
+    &-date {
+        color: $gray-800;
+        padding: 10px;
+        background: $gray-200;
+        font-weight: bold;
+    }
 }
