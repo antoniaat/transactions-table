@@ -3,7 +3,7 @@ import "../../../styles/components/table/transactions-table.scss";
 import { useMemo } from "react";
 import { Column } from "react-table";
 import useTransactions from "../../hooks/transactions/use-transactions";
-import { TableCell as TableCellProps } from "../../../types/table";
+import { TableCell as TableCellProps, TableCellValue } from "../../../types/table";
 import { Transaction } from "../../../types/transaction";
 import DataLoadingContext from "../contexts/data-loading-context";
 import ContentLoading from "../content-loading";
@@ -18,11 +18,19 @@ const TransactionsTable = () => {
     const { gateway } = props.row.original;
 
     return (
-      <TableCell {...props} className="transactions-table-source" label="source">
+      <TableCell
+        {...props}
+        className="transactions-table-source"
+        label="source"
+      >
         <TransactionsTableGateway gateway={gateway} />
       </TableCell>
     );
   };
+
+  const categoryColumnCell = (value:TableCellValue) => (
+    <span className="transactions-table-category">{value}</span>
+  );
 
   const sourceColumn: Column<Transaction> = {
     Header: <ContentLoading text="Source" isLoading={isLoadingTransactions} />,
@@ -35,19 +43,21 @@ const TransactionsTable = () => {
       <ContentLoading text="Category" isLoading={isLoadingTransactions} />
     ),
     accessor: "category",
-    Cell: (props: TableCellProps) => <TableCell {...props} label="category" />,
+    Cell: (props: TableCellProps) => (
+      <TableCell {...props} label="source" renderValue={categoryColumnCell} />
+    ),
   };
 
   const amountColumn: Column<Transaction> = {
     Header: <ContentLoading text="Amount" isLoading={isLoadingTransactions} />,
     accessor: "amount",
-    Cell: (props: TableCellProps) => <TableCell {...props} label="amount" />,
+    Cell: (props: TableCellProps) => <TableCell {...props}  renderValue={categoryColumnCell} label="amount" />,
   };
 
   const dateColumn: Column<Transaction> = {
     Header: <ContentLoading text="Date" isLoading={isLoadingTransactions} />,
     accessor: "created_at",
-    Cell: (props: TableCellProps) => <TableCell {...props} label="date" />,
+    Cell: (props: TableCellProps) => <TableCell {...props} renderValue={categoryColumnCell} label="date" />,
   };
 
   const columns = useMemo(
