@@ -4,14 +4,16 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 interface Props {
   width?: number;
   height?: number;
-  count?: number;
 }
 
-const SkeletonLoading: React.FC<Props> = ({ width = 100, height = 100, count = 1 }) => {
+const SkeletonLoading: React.FC<Props> = ({
+  width = 120,
+  height = 100,
+}) => {
   return (
     <span className="skeleton-loading-wrapper">
       <SkeletonTheme color="#CFDAE7">
-        <Skeleton width={width} height={height} count={count} />
+        <Skeleton width={width} height={height} />
       </SkeletonTheme>
     </span>
   );
