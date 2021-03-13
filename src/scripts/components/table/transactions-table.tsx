@@ -49,7 +49,7 @@ const TransactionsTable = () => {
     ),
     accessor: "category",
     Cell: (props: TableCellProps) => (
-      <TableCell {...props} label="source" renderValue={categoryColumnCell} />
+      <TableCell {...props} label="category" renderValue={categoryColumnCell} />
     ),
   };
 
@@ -57,7 +57,7 @@ const TransactionsTable = () => {
     const { amount, currency_code } = props.row.original;
 
     return (
-      <TableCell {...props} label="source">
+      <TableCell {...props} label="amount">
         <TransactionsTableAmount amount={amount} currencyCode={currency_code} />
       </TableCell>
     );
