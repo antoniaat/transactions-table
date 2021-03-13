@@ -1,0 +1,31 @@
+@import '../../base/tools/variables.scss';
+
+.table-cell-desc-sort {
+    &-up,
+    &-down {
+        &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            position: relative;
+            right: -8px;
+            border-color: $gray-800;
+        }
+    }
+
+    &-up {
+        &::after {
+            border-bottom: 5px;
+            top: -16px;
+        }
+    }
+
+    &-down {
+        &::after {
+            border-top: 5px;
+            top: 12px;
+        }
+    }
+}
