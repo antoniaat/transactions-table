@@ -1,7 +1,7 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
-const skeletonWidth = 80;
+const skeletonWidth = 90;
 const skeletonHeight = 15;
 const count = 1;
 
@@ -23,11 +23,13 @@ const ContentLoading: React.FC<Props> = ({
     </span>
   );
 
+  const content = text || children;
+
   if (isLoading) {
     return loadingIndicator;
   }
 
-  return <>{text || children}</>;
+  return <>{content}</>;
 };
 
 export default ContentLoading;
