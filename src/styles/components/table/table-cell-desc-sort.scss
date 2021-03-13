@@ -11,20 +11,19 @@
             border-right: 5px solid transparent;
             position: relative;
             right: -8px;
-            border-color: $gray-800;
         }
     }
 
     &-up {
         &::after {
-            border-bottom: 5px;
+            border-bottom: 5px solid $gray-800;
             top: -16px;
         }
     }
 
     &-down {
         &::after {
-            border-top: 5px;
+            border-top: 5px solid $gray-800;
             top: 12px;
         }
     }

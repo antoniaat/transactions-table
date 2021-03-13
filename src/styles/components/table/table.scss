@@ -12,4 +12,11 @@
     &-cell {
         padding: 10px 15px;
     }
+
+    &-header-cell {
+       &:hover {
+        background: $gray-200;
+        cursor: pointer;
+       }
+    }
 }

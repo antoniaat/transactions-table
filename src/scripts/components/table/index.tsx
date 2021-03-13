@@ -30,7 +30,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
           <tr className="table-row" {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map((column) => (
               <th
-                className="table-cell"
+                className="table-header-cell table-cell"
                 {...column.getHeaderProps(column.getSortByToggleProps())}
               >
                 {column.render(tableHeader)}
