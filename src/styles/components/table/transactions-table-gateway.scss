@@ -1,3 +1,7 @@
+@import '../../base/tools/mixins.scss';
+
 .transactions-table-gateway {
     padding-right: 10px;
+
+    @include text-overflow(2);
 }

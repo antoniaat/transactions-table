@@ -6,6 +6,7 @@
     
     &-row {
         border-bottom: 1px solid $gray-300;
+        grid-template-columns: repeat(4, 1fr);
     }
 
     &-cell {
