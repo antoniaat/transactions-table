@@ -19,8 +19,8 @@ const emptyTransaction = {
     account_balance_snapshot: 0,
     details: "",
   },
-  created_at: "",
-  updated_at: "",
+  created_at: null,
+  updated_at: null,
 }
 
 const defaultTransactionsData: TransactionResponse = {
