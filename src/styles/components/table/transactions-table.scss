@@ -1,3 +1,5 @@
+@import '../../base/tools/variables.scss';
+
 .transactions-table {
     display: flex;
     justify-content: center;
@@ -9,5 +11,11 @@
         grid-auto-flow: column;
         align-items: center;
         grid-template-columns: min-content 1fr;
+    }
+
+    &-category {
+        border: 1px solid $purple-600;
+        background: $purple-100;
+        color: $purple-600;
     }
 }

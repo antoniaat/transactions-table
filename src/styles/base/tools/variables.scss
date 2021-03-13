@@ -4,8 +4,11 @@ $bold: '-Bold';
 
 $primary-font: 'Inter';
 
-$primary-font-default: $primary-font+$regular;
-$primary-font-bold: $primary-font+$bold;
-$primary-font-light: $primary-font+$light;
+$primary-font-default: $primary-font + $regular;
+$primary-font-bold: $primary-font + $bold;
+$primary-font-light: $primary-font + $light;
 
 $gray-300: #d3d3d3;
+
+$purple-600: #767dc1;
+$purple-100: #f0f4fa;
