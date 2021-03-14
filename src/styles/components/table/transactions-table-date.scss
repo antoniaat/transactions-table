@@ -1,0 +1,9 @@
+@import '../../base/tools/breakpoints.scss';
+
+.transactions-table-date-wrapper {
+    justify-self: end;
+
+    @include for-tablet-landscape-up {
+        justify-self: center;
+    }
+}

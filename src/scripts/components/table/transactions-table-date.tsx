@@ -1,3 +1,5 @@
+import '../../../styles/components/table/transactions-table-date.scss'
+
 import React from "react";
 
 interface Props {
@@ -8,7 +10,7 @@ const TransactionsTableDate: React.FC<Props> = ({ dateString = "" }) => {
   const dateTime = new Date(dateString);
   const date = dateTime.toDateString();
 
-  return <span className="transactions-table-date">{date}</span>;
+  return <span className="transactions-table-date-wrapper">{date}</span>;
 };
 
 export default TransactionsTableDate;

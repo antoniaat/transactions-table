@@ -40,7 +40,7 @@ const TransactionsTable = () => {
   };
 
   const categoryColumnCell = (value: TableCellValue) => (
-    <span className="transactions-table-category">{value}</span>
+    <span className="transactions-table-category-wrapper">{value}</span>
   );
 
   const categoryColumn: Column<Transaction> = {
@@ -49,7 +49,12 @@ const TransactionsTable = () => {
     ),
     accessor: "category",
     Cell: (props: TableCellProps) => (
-      <TableCell {...props} label="category" renderValue={categoryColumnCell} />
+      <TableCell
+        {...props}
+        label="category"
+        className="transactions-table-category"
+        renderValue={categoryColumnCell}
+      />
     ),
   };
 
