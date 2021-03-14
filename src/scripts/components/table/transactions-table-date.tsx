@@ -13,7 +13,7 @@ const TransactionsTableDate: React.FC<Props> = ({ dateString = "" }) => {
 
   return (
     <TableCell className="transactions-table-date" label="Date">
-      <span className="transactions-table-date-wrapper">{date}</span>
+      <article className="transactions-table-date-content">{date}</article>
     </TableCell>
   );
 };

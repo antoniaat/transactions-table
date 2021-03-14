@@ -1,9 +1,27 @@
+@import '../../base/tools/variables.scss';
 @import '../../base/tools/breakpoints.scss';
 
-.transactions-table-date-wrapper {
-    justify-self: end;
+.transactions-table-date {
+    color: $gray-800;
+    padding: 10px;
+    background: $gray-200;
+    font-weight: bold;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    border-bottom: none;
 
     @include for-tablet-landscape-up {
-        justify-self: center;
+        grid-auto-flow: row;
+        grid-template-columns: 1fr;
+        align-content: center;
+    }
+
+    &-content {
+        justify-self: end;
+
+        @include for-tablet-landscape-up {
+            justify-self: start;
+        }
     }
 }

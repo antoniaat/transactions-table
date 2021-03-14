@@ -18,21 +18,4 @@
         align-items: center;
         grid-template-columns: min-content 1fr;
     }
-
-    &-date {
-        color: $gray-800;
-        padding: 10px;
-        background: $gray-200;
-        font-weight: bold;
-        display: grid;
-        align-items: center;
-        grid-template-columns: repeat(2, 1fr);
-        border-bottom: none;
-
-        @include for-tablet-landscape-up {
-            grid-auto-flow: row;
-            grid-template-columns: 1fr;
-            align-content: center;
-        }
-    }
 }
