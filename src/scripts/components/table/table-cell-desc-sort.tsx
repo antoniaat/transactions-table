@@ -14,7 +14,7 @@ const TableCellDescSort: React.FC<Props> = ({ isSortedDesc = true }) => {
     "table-cell-desc-sort-down": !isSortedDesc,
   });
 
-  return <span className={combinedClassName}></span>;
+  return <span className={combinedClassName} />;
 };
 
 export default TableCellDescSort;
