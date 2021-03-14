@@ -5,6 +5,7 @@ import revolutLogo from "../../../assets/images/revolut-logo.png";
 import "../../../styles/components/table/transactions-table-gateway.scss";
 
 import React from "react";
+import TableCell from "./table-cell";
 
 interface Props {
   gateway: string;
@@ -21,9 +22,12 @@ const TransactionsTableGateway: React.FC<Props> = ({ gateway }) => {
   const imgSrc = GATEWAY_TYPES[sanitizedGatewayName];
 
   return (
-    <article className="transactions-table-gateway-wrapper">
-      <img src={imgSrc} alt={gateway} />
-    </article>
+    <TableCell className="transactions-table-gateway" label="source">
+      <article className="transactions-table-gateway-image">
+        <img src={imgSrc} alt={gateway} />
+      </article>
+      <article className="transactions-table-gateway-text">{gateway}</article>
+    </TableCell>
   );
 };
 

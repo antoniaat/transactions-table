@@ -17,14 +17,13 @@ const TableCell: React.FC<TableCellProps> = ({
     [className]: !!className,
   });
 
+  const cellContent = children || renderValue(value);
+
   return (
     <td className={combinedClassName} data-label={label}>
-      {children}
-      {renderValue && (
-        <ContentLoading isLoading={isLoadingTransactions}>
-          {renderValue(value)}
-        </ContentLoading>
-      )}
+      <ContentLoading isLoading={isLoadingTransactions}>
+        {cellContent}
+      </ContentLoading>
     </td>
   );
 };

@@ -1,84 +1,55 @@
 import "../../../styles/components/table/transactions-table.scss";
 
 import { useMemo } from "react";
-import { Column } from "react-table";
+import { Cell, Column } from "react-table";
 import useTransactions from "../../hooks/transactions/use-transactions";
-import { TableCellProps, TableCellType } from "../../../types/table";
 import { Transaction } from "../../../types/transaction";
 import DataLoadingContext from "../contexts/data-loading-context";
 import ContentLoading from "../content-loading";
 import TransactionsTableGateway from "./transactions-table-gateway";
 import TransactionsTableAmount from "./transactions-table-amount";
 import TransactionsTableDate from "./transactions-table-date";
-import TableCell from "./table-cell";
+import TransactionsTableCategory from "./transactions-table-category";
 import Table from "./index";
 
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();
 
-  const sourceColumnCell = (props: TableCellProps) => {
-    const { gateway } = props.row.original;
-
-    return (
-      <TableCell
-        {...props}
-        className="transactions-table-gateway"
-        label="source"
-      >
-        <TransactionsTableGateway gateway={gateway} />
-      </TableCell>
-    );
-  };
-
-  const sourceColumn: Column<Transaction> = {
+  const sourceColumn: any = {
     Header: <ContentLoading text="Source" isLoading={isLoadingTransactions} />,
     accessor: "description",
-    Cell: sourceColumnCell,
+    Cell: (props: Cell<Transaction>) => (
+      <TransactionsTableGateway gateway={props.row.original.gateway} />
+    ),
   };
 
-  const categoryColumnCell = (value: TableCellType) => (
-    <span className="transactions-table-category-wrapper">{value}</span>
-  );
-
-  const categoryColumn: Column<Transaction> = {
+  const categoryColumn: any = {
     Header: (
       <ContentLoading text="Category" isLoading={isLoadingTransactions} />
     ),
     accessor: "category",
-    Cell: (props: TableCellProps) => (
-      <TableCell
-        {...props}
-        label="category"
-        className="transactions-table-category"
-        renderValue={categoryColumnCell}
+    Cell: (props: Cell<Transaction>) => (
+      <TransactionsTableCategory category={props.row.original.category} />
+    ),
+  };
+
+  const amountColumn: any = {
+    Header: <ContentLoading text="Amount" isLoading={isLoadingTransactions} />,
+    accessor: "amount",
+    Cell: (props: Cell<Transaction>) => (
+      <TransactionsTableAmount
+        gateway={props.row.original.gateway}
+        amount={props.row.original.amount}
+        currencyCode={props.row.original.currency_code}
       />
     ),
   };
 
-  const amountColumnCell = (props: TableCellProps) => (
-    <TransactionsTableAmount row={props.row} />
-  );
-
-  const amountColumn: Column<Transaction> = {
-    Header: <ContentLoading text="Amount" isLoading={isLoadingTransactions} />,
-    accessor: "amount",
-    Cell: amountColumnCell,
-  };
-
-  const dateColumnCell = (value: TableCellType) => (
-    <TransactionsTableDate dateString={value} />
-  );
-
   const dateColumn: Column<Transaction> = {
     Header: <ContentLoading text="Date" isLoading={isLoadingTransactions} />,
     accessor: "updated_at",
-    Cell: (props: TableCellProps) => (
-      <TableCell
-        {...props}
-        className="transactions-table-date"
-        renderValue={dateColumnCell}
-        label="date"
-      />
+    Cell: (props: Cell<Transaction>) => (
+      <TransactionsTableDate dateString={props.row.original.updated_at} />
     ),
   };
 
