@@ -19,20 +19,14 @@
         align-items: center;
     }
 
-    &-wrapper,
-    &-currency {
-        order: 1;
-    }
-
-    &-value,
+    &-gateway,
     &-currency {
         font-size: 16px;
         font-weight: normal;
     }
 
-    &-value {
+    &-gateway {
         padding-right: 5px;
-        order: 2;
         color: $gray-800;
 
         @include for-tablet-landscape-up {

@@ -25,8 +25,8 @@ const TransactionsTableAmount: React.FC<Props> = ({
   return (
     <TableCell className={combinedClassName} label="amount">
       <span className="transactions-table-amount-value">{amount}</span>
-      <span className="transactions-table-amount-gateway">{gateway}</span>
       <span className="transactions-table-amount-currency">{currencyCode}</span>
+      <span className="transactions-table-amount-gateway">{gateway}</span>
     </TableCell>
   );
 };
