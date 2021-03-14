@@ -20,7 +20,7 @@
         margin-bottom: 18px;
 
         @include for-tablet-landscape-up {
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 2fr repeat(3, 1fr);
             border-top: none;
             border-left: none;
             border-right: none;

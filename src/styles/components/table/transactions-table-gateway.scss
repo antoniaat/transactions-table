@@ -13,4 +13,8 @@
     &-image {
         padding-right: 10px;
     }
+
+    &-text {
+        @include text-overflow(2);
+    }
 }

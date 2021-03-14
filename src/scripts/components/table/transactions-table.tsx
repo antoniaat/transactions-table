@@ -19,7 +19,9 @@ const TransactionsTable = () => {
     Header: <ContentLoading text="Source" isLoading={isLoadingTransactions} />,
     accessor: "description",
     Cell: (props: Cell<Transaction>) => (
-      <TransactionsTableGateway gateway={props.row.original.gateway} />
+      <TransactionsTableGateway 
+      description={props.row.original.description}
+      gateway={props.row.original.gateway} />
     ),
   };
 

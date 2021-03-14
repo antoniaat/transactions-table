@@ -9,6 +9,7 @@ import TableCell from "./table-cell";
 
 interface Props {
   gateway: string;
+  description: string;
 }
 
 const GATEWAY_TYPES: { [key: string]: string } = {
@@ -17,7 +18,7 @@ const GATEWAY_TYPES: { [key: string]: string } = {
   juni: juniLogo,
 };
 
-const TransactionsTableGateway: React.FC<Props> = ({ gateway }) => {
+const TransactionsTableGateway: React.FC<Props> = ({ gateway, description }) => {
   const sanitizedGatewayName = gateway.toLowerCase();
   const imgSrc = GATEWAY_TYPES[sanitizedGatewayName];
 
@@ -26,7 +27,7 @@ const TransactionsTableGateway: React.FC<Props> = ({ gateway }) => {
       <article className="transactions-table-gateway-image">
         <img src={imgSrc} alt={gateway} />
       </article>
-      <article className="transactions-table-gateway-text">{gateway}</article>
+      <article className="transactions-table-gateway-text">{description}</article>
     </TableCell>
   );
 };
