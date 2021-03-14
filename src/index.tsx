@@ -1,6 +1,6 @@
 import './styles/base/styles.scss';
+import TransactionsTable from './scripts/components/transactions-table';
 
 import ReactDOM from "react-dom";
-import Transactions from "./views/Transactions";
 
-ReactDOM.render(<Transactions />, document.getElementById("root"));
+ReactDOM.render(<TransactionsTable />, document.getElementById("root"));
