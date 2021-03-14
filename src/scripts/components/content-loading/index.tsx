@@ -12,7 +12,7 @@ interface Props {
 
 const ContentLoading: React.FC<Props> = ({
   isLoading,
-  text = '',
+  text = "",
   children,
 }) => {
   const loadingIndicator = (
