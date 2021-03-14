@@ -8,8 +8,8 @@ const TableCell: React.FC<TableCellProps> = ({
   value,
   label,
   className = " ",
-  children,
   renderValue = (val) => val,
+  children,
 }) => {
   const { isLoadingTransactions } = useContext(DataLoadingContext);
   const combinedClassName = getClassName({
@@ -17,12 +17,10 @@ const TableCell: React.FC<TableCellProps> = ({
     [className]: !!className,
   });
 
-  const cellContent = children || renderValue(value);
-
   return (
     <td className={combinedClassName} data-label={label}>
       <ContentLoading isLoading={isLoadingTransactions}>
-        {cellContent}
+        {children || renderValue(value)}
       </ContentLoading>
     </td>
   );
