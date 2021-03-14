@@ -17,16 +17,16 @@ const useTransactions = () => {
     data: defaultTransactionsData,
   });
 
-  const getData = async () => {
-    const data = await get(getTransactionsEndpoint);
-
-    setServerResponse({
-      isLoading: false,
-      data,
-    });
-  };
-
   useEffect(() => {
+    const getData = async () => {
+      const data = await get(getTransactionsEndpoint);
+
+      setServerResponse({
+        isLoading: false,
+        data,
+      });
+    };
+
     getData();
   }, []);
 
