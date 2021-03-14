@@ -1,10 +1,6 @@
 import React from "react";
-import { Cell, Column, Row } from "react-table";
+import { Column, Row } from "react-table";
 import { Transaction, TransactionResponse } from "./transaction";
-
-interface TableRowProps {
-  original: Transaction;
-}
 
 type TableCellType = number | string | React.ReactNode;
 
@@ -21,4 +17,4 @@ interface TableProps {
   data: TransactionResponse;
 }
 
-export type { TableCellProps, TableProps, TableRowProps, TableCellType };
+export type { TableCellProps, TableProps, TableCellType };
