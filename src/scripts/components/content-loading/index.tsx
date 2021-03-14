@@ -15,18 +15,20 @@ const ContentLoading: React.FC<Props> = ({
   text = "",
   children,
 }) => {
-  const loadingIndicator = (
-    <span className="skeleton-loading-wrapper">
-      <SkeletonTheme color="#CFDAE7" highlightColor="#fff">
-        <Skeleton width={skeletonWidth} height={skeletonHeight} count={count} />
-      </SkeletonTheme>
-    </span>
-  );
-
   const content = text || children;
 
   if (isLoading) {
-    return loadingIndicator;
+    return (
+      <span className="skeleton-loading-wrapper">
+        <SkeletonTheme color="#CFDAE7" highlightColor="#fff">
+          <Skeleton
+            width={skeletonWidth}
+            height={skeletonHeight}
+            count={count}
+          />
+        </SkeletonTheme>
+      </span>
+    );
   }
 
   return <>{content}</>;
