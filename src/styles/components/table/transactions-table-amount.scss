@@ -3,7 +3,6 @@
 @import '../../base/tools/breakpoints.scss';
 
 .transactions-table-amount {
-    position: relative;
     display: flex;
     justify-content: space-between;
 
@@ -20,6 +19,8 @@
 
     &-incoming,
     &-outgoing {
+        position: relative;
+
         &::before {
             content: '';
             width: 0;
@@ -27,12 +28,11 @@
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
             position: absolute;
-            left: 145px;
-            top: 22px;
+            left: -20px;
+            top: 12px;
 
             @include for-tablet-landscape-up {
-                left: -18px;
-                top: 38px;
+                top: 22px;
             }
         }
     }
