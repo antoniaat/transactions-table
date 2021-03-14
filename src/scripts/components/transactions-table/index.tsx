@@ -1,11 +1,10 @@
 import "../../../styles/components/transactions-table/transactions-table.scss";
 
 import { useMemo } from "react";
-import useTransactions from "./use-transactions";
 import DataLoadingContext from "../contexts/data-loading-context";
-
 import Table from "../table/index";
-import { getColumnsConfig } from "./columns";
+import useTransactions from "./use-transactions";
+import { getColumnsConfig } from "./transactions-table-columns";
 
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();
