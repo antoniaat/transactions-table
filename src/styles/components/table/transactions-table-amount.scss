@@ -1,12 +1,21 @@
 @import '../../base/tools/variables.scss';
 @import '../../base/tools/mixins.scss';
+@import '../../base/tools/breakpoints.scss';
 
 .transactions-table-amount {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+
+    @include for-tablet-landscape-up {
+        align-items: start;
+        flex-direction: column;
+    }
 
     &-value {
         padding-right: 5px;
         font-weight: bold;
+        font-size: 20px;
     }
 
     &-incoming,
@@ -18,8 +27,13 @@
             border-left: 5px solid transparent;
             border-right: 5px solid transparent;
             position: absolute;
-            left: -18px;
-            top: 18px;
+            left: 145px;
+            top: 22px;
+
+            @include for-tablet-landscape-up {
+                left: -18px;
+                top: 38px;
+            }
         }
     }
 

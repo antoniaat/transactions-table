@@ -25,7 +25,7 @@ const TransactionsTable = () => {
     return (
       <TableCell
         {...props}
-        className="transactions-table-source"
+        className="transactions-table-gateway"
         label="source"
       >
         <TransactionsTableGateway gateway={gateway} />
@@ -62,7 +62,11 @@ const TransactionsTable = () => {
     const { amount, currency_code } = props.row.original;
 
     return (
-      <TableCell {...props} label="amount">
+      <TableCell
+        {...props}
+        className="transactions-table-amount"
+        label="amount"
+      >
         <TransactionsTableAmount amount={amount} currencyCode={currency_code} />
       </TableCell>
     );

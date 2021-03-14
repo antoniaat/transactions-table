@@ -4,8 +4,13 @@
 .transactions-table {
     display: flex;
     justify-content: center;
-    margin-top: 120px;
     text-align: left;
+    max-width: 1000px;
+    margin: 120px 20px;
+
+    @include for-desktop-up {
+        margin: 120px auto;
+    }
 
     &-source {
         display: grid;
@@ -15,7 +20,13 @@
     }
 
     &-category {
-        justify-self: end;
+        align-self: center;
+        display: flex;
+        justify-content: space-between;
+
+        @include for-tablet-landscape-up {
+            justify-content: flex-start;
+        }
 
         &-wrapper {
             border: 1px solid $purple-600;
@@ -34,10 +45,12 @@
         display: grid;
         align-items: center;
         grid-template-columns: repeat(2, 1fr);
+        border-bottom: none;
 
         @include for-tablet-landscape-up {
             grid-auto-flow: row;
-            grid-template-columns: auto;
+            grid-template-columns: 1fr;
+            align-content: center;
         }
     }
 }

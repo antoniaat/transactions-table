@@ -1,7 +1,16 @@
+@import '../../base/tools/breakpoints.scss';
 @import '../../base/tools/mixins.scss';
 
 .transactions-table-gateway {
-    padding-right: 10px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr min-content max-content;
 
-    @include text-overflow(2);
+    @include for-tablet-landscape-up {
+        grid-template-columns: min-content 1fr;
+    }
+
+    &-wrapper {
+        padding-right: 10px;
+    }
 }

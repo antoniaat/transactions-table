@@ -2,20 +2,40 @@
 @import '../../base/tools/breakpoints.scss';
 
 .table {
-    border: 1px solid $gray-300;
     border-collapse: collapse;
 
+    @include for-tablet-landscape-up {
+        border-top: 1px solid $gray-300;
+        border-left: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+    }
+
     &-row {
-        border-bottom: 1px solid $gray-300;
         display: grid;
+        align-items: center;
+        border-top: 1px solid $gray-300;
+        border-left: 1px solid $gray-300;
+        border-right: 1px solid $gray-300;
+        margin-bottom: 18px;
 
         @include for-tablet-landscape-up {
             grid-template-columns: repeat(4, 1fr);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 1px solid $gray-300;
+            align-items: stretch;
+            margin-bottom: 0;
         }
     }
 
     &-cell {
         padding: 10px 15px;
+        border-bottom: 1px solid $gray-300;
+
+        @include for-tablet-landscape-up {
+            border-bottom: none;
+        }
 
         &::before {
             content: attr(data-label);
@@ -24,6 +44,7 @@
 
             @include for-tablet-landscape-up {
                 content: '';
+                position: absolute;
             }
         }
     }
@@ -36,6 +57,11 @@
         }
 
         &-cell {
+            box-sizing: border-box;
+            padding: 15px;
+            width: 100%;
+            justify-self: start;
+
             &:hover {
                 background: $gray-200;
                 cursor: pointer;

@@ -11,7 +11,7 @@ interface Props {
 const TransactionsTableAmount: React.FC<Props> = ({ amount, currencyCode }) => {
   const isIncomingTransaction = amount > 0;
   const combinedClassName = getClassName({
-    "transactions-table-amount": true,
+    "transactions-table-amount-wrapper": true,
     "transactions-table-amount-incoming": isIncomingTransaction,
     "transactions-table-amount-outgoing": !isIncomingTransaction,
   });

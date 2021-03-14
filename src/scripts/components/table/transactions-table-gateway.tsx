@@ -21,7 +21,7 @@ const TransactionsTableGateway: React.FC<Props> = ({ gateway }) => {
   const imgSrc = GATEWAY_TYPES[sanitizedGatewayName];
 
   return (
-    <article className="transactions-table-gateway">
+    <article className="transactions-table-gateway-wrapper">
       <img src={imgSrc} alt={gateway} />
     </article>
   );
