@@ -9,7 +9,7 @@ interface Props {
 
 const TransactionsTableCategory: React.FC<Props> = ({ category }) => (
   <TableCell className="transactions-table-category" label="category">
-    <span className="transactions-table-category-wrapper">{category}</span>
+    <article className="transactions-table-category-text">{category}</article>
   </TableCell>
 );
 
