@@ -7,27 +7,13 @@ Simple transactions table build with [React.js](https://reactjs.org/), [react-ta
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally. To get a local copy up and running follow these simple example steps.
+In the project directory, you need to run ```yarn install``` to download all the project needed packages.
 
-### Installation
 
-In the project directory, you can run:
+In the project directory to start the project in development mode you need to run ```yarn start```.
 
-### `yarn install`
-
-## Usage
-
-The following command runs the app in the development mode.
-
-### `yarn start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.
 You will also see any lint errors in the console.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
