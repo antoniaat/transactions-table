@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { TransactionResponse } from "../../../types/transaction";
+import { TransactionResponse } from "../../types/transaction";
 import { defaultTransactionsData } from "../../constants";
 import { get } from "../../utils/data-utils";
 

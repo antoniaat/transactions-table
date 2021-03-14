@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { getClassName } from "../../utils/react-utils";
-import { TableCellProps } from "../../../types/table";
+import { TableCellProps } from "../../types/table";
 import DataLoadingContext from "../contexts/data-loading-context";
 import ContentLoading from "../content-loading";
 

@@ -1,4 +1,4 @@
-import { TransactionResponse } from "../types/transaction";
+import { TransactionResponse } from "./types/transaction";
 
 const emptyTransaction = {
   id: "",

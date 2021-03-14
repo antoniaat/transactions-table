@@ -3,7 +3,7 @@ import "../../../styles/components/transactions-table/transactions-table.scss";
 import { useMemo } from "react";
 import { Cell, Column } from "react-table";
 import useTransactions from "../../hooks/transactions/use-transactions";
-import { Transaction } from "../../../types/transaction";
+import { Transaction } from "../../types/transaction";
 import DataLoadingContext from "../contexts/data-loading-context";
 import ContentLoading from "../content-loading";
 import TransactionsTableGateway from "./transactions-table-gateway";
