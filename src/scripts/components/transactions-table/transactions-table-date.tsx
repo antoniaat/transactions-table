@@ -1,7 +1,7 @@
-import "../../../styles/components/table/transactions-table-date.scss";
+import "../../../styles/components/transactions-table/transactions-table-date.scss";
 
 import React from "react";
-import TableCell from "./table-cell";
+import TableCell from "../table/table-cell";
 
 interface Props {
   dateString: string;

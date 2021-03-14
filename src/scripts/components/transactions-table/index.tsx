@@ -1,4 +1,4 @@
-import "../../../styles/components/table/transactions-table.scss";
+import "../../../styles/components/transactions-table/transactions-table.scss";
 
 import { useMemo } from "react";
 import { Cell, Column } from "react-table";
@@ -10,7 +10,7 @@ import TransactionsTableGateway from "./transactions-table-gateway";
 import TransactionsTableAmount from "./transactions-table-amount";
 import TransactionsTableDate from "./transactions-table-date";
 import TransactionsTableCategory from "./transactions-table-category";
-import Table from "./index";
+import Table from "../table/index";
 
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();

@@ -1,4 +1,4 @@
-import "../../../styles/components/table/transactions-table-amount.scss";
+import "../../../styles/components/transactions-table/transactions-table-amount.scss";
 
 import React from "react";
 import { getClassName } from "../../utils/react-utils";

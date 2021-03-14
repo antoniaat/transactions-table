@@ -1,7 +1,7 @@
-import "../../../styles/components/table/transactions-table-category.scss";
+import "../../../styles/components/transactions-table/transactions-table-category.scss";
 
 import React from "react";
-import TableCell from "./table-cell";
+import TableCell from "../table/table-cell";
 
 interface Props {
   category: string;

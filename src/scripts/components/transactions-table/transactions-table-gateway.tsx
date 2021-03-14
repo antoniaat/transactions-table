@@ -2,10 +2,10 @@ import juniLogo from "../../../assets/images/juni-logo.png";
 import paypalLogo from "../../../assets/images/paypal-logo.png";
 import revolutLogo from "../../../assets/images/revolut-logo.png";
 
-import "../../../styles/components/table/transactions-table-gateway.scss";
+import "../../../styles/components/transactions-table/transactions-table-gateway.scss";
 
 import React from "react";
-import TableCell from "./table-cell";
+import TableCell from "../table/table-cell";
 
 interface Props {
   gateway: string;
