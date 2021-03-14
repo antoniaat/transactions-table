@@ -1,5 +1,5 @@
 import React from "react";
-import { Column } from "react-table";
+import { Cell, Column, Row } from "react-table";
 import { Transaction, TransactionResponse } from "./transaction";
 
 interface TableRowProps {
@@ -9,10 +9,10 @@ interface TableRowProps {
 type TableCellType = number | string | React.ReactNode;
 
 interface TableCellProps {
-  value: TableCellType;
   label: string;
   className?: string;
-  row: TableRowProps;
+  value?: TableCellType;
+  row?: Row;
   renderValue?: (arg: TableCellType) => JSX.Element;
 }
 
