@@ -7,7 +7,7 @@ interface Props {
   dateString: string;
 }
 
-const TransactionsTableDate: React.FC<Props> = ({ dateString = "" }) => {
+const TransactionsTableDate: React.FC<Props> = ({ dateString }) => {
   const dateTime = new Date(dateString);
   const date = dateTime.toDateString();
 
