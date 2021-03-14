@@ -2,6 +2,7 @@
 @import '../../base/tools/breakpoints.scss';
 
 .table {
+    width: 100%;
     border-collapse: collapse;
 
     @include for-tablet-landscape-up {

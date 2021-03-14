@@ -4,7 +4,7 @@
 .transactions-table-gateway {
     display: grid;
     align-items: center;
-    grid-template-columns: 1fr min-content max-content;
+    grid-template-columns: 1fr min-content fit-content(200px);
 
     @include for-tablet-landscape-up {
         grid-template-columns: min-content 1fr;
