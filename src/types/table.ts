@@ -2,18 +2,18 @@ import React from "react";
 import { Column } from "react-table";
 import { Transaction, TransactionResponse } from "./transaction";
 
-interface RowOriginal {
+interface TableRowProps {
   original: Transaction;
 }
 
 type TableCellValue = number | string | React.ReactNode;
 
-interface TableCell {
+interface TableCellProps {
   value: TableCellValue;
   label: string;
   className?: string;
-  row: RowOriginal;
-  renderValue: (arg: TableCellValue) => JSX.Element;
+  row: TableRowProps;
+  renderValue?: (arg: TableCellValue) => JSX.Element;
 }
 
 interface Table {
@@ -21,5 +21,4 @@ interface Table {
   data: TransactionResponse;
 }
 
-export type { TableCell, Table, 
-   TableCellValue };
+export type { TableCellProps, Table, TableRowProps, TableCellValue };
