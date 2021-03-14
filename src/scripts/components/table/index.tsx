@@ -1,9 +1,10 @@
 import "../../../styles/components/table/table.scss";
 
 import * as React from "react";
-import { useTable, useSortBy } from "react-table";
+import { useTable, useSortBy, Cell, HeaderGroup, Row } from "react-table";
 import { Table as TableProps } from "../../../types/table";
 import TableCellDescSort from "./table-cell-desc-sort";
+import { Transaction } from "../../../types/transaction";
 
 const tableHeader = "Header";
 const tableCell = "Cell";
@@ -26,9 +27,9 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
   return (
     <table className="table" {...getTableProps()}>
       <thead className="table-header">
-        {headerGroups.map((headerGroup) => (
+        {headerGroups.map((headerGroup: HeaderGroup<Transaction>) => (
           <tr className="table-row" {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column) => (
+            {headerGroup.headers.map((column: HeaderGroup<Transaction>) => (
               <th
                 className="table-header-cell table-cell"
                 {...column.getHeaderProps(column.getSortByToggleProps())}
@@ -43,12 +44,14 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
         ))}
       </thead>
       <tbody className="table-body" {...getTableBodyProps()}>
-        {rows.map((row, i) => {
+        {rows.map((row: Row<Transaction>, _) => {
           prepareRow(row);
 
           return (
             <tr className="table-row" {...row.getRowProps()}>
-              {row.cells.map((cell) => cell.render(tableCell))}
+              {row.cells.map((cell: Cell<Transaction>) =>
+                cell.render(tableCell)
+              )}
             </tr>
           );
         })}
