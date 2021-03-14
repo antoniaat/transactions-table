@@ -9,8 +9,11 @@ interface Extra {
   account_balance_snapshot: number;
   details: string;
 }
+interface TransactionResponse {
+  transactions: Transaction[];
+}
 
-export interface Transaction {
+interface Transaction {
   id: string;
   account_id: string;
   amount: number;
@@ -23,8 +26,4 @@ export interface Transaction {
   updated_at: string;
 }
 
-interface TransactionResponse {
-  transactions: Transaction[];
-}
-
-export type { TransactionResponse };
+export type { TransactionResponse, Transaction };
