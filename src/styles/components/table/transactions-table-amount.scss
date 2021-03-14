@@ -3,10 +3,13 @@
 @import '../../base/tools/breakpoints.scss';
 
 .transactions-table-amount {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr repeat(3, min-content);
+    align-items: center;
+    grid-column-gap: 10px;
     font-weight: bold;
     font-size: 20px;
+    padding-left: 22px;
 
     @include for-tablet-landscape-up {
         display: grid;
@@ -29,27 +32,27 @@
 
     &-value {
         padding-right: 5px;
-        grid-column: 1 / span 2;
         order: 2;
         color: $gray-800;
+
+        @include for-tablet-landscape-up {
+            grid-column: 1 / span 2;
+        }
     }
 
     &-incoming,
     &-outgoing {
         position: relative;
 
-        &::before {
-            content: '';
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            position: absolute;
-            left: -20px;
-            top: 12px;
-
+        &::after {
             @include for-tablet-landscape-up {
-                top: 22px;
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                position: absolute;
+                left: -8px;
             }
         }
     }
@@ -57,7 +60,7 @@
     &-incoming {
         color: $green-500;
 
-        &::before {
+        &::after {
             border-bottom: 5px solid $green-500;
         }
     }
@@ -65,7 +68,7 @@
     &-outgoing {
         color: $red-500;
 
-        &::before {
+        &::after {
             border-top: 5px solid $red-500;
         }
     }

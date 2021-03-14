@@ -42,6 +42,8 @@
             content: attr(data-label);
             text-transform: capitalize;
             font-weight: bold;
+            color: $gray-800;
+            font-size: 16px;
 
             @include for-tablet-landscape-up {
                 content: '';
