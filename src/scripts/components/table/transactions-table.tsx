@@ -15,7 +15,7 @@ import Table from "./index";
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();
 
-  const sourceColumn: any = {
+  const sourceColumn: Column<Transaction> = {
     Header: <ContentLoading text="Source" isLoading={isLoadingTransactions} />,
     accessor: "description",
     Cell: (props: Cell<Transaction>) => (
@@ -23,7 +23,7 @@ const TransactionsTable = () => {
     ),
   };
 
-  const categoryColumn: any = {
+  const categoryColumn: Column<Transaction> = {
     Header: (
       <ContentLoading text="Category" isLoading={isLoadingTransactions} />
     ),
@@ -33,7 +33,7 @@ const TransactionsTable = () => {
     ),
   };
 
-  const amountColumn: any = {
+  const amountColumn: Column<Transaction> = {
     Header: <ContentLoading text="Amount" isLoading={isLoadingTransactions} />,
     accessor: "amount",
     Cell: (props: Cell<Transaction>) => (
