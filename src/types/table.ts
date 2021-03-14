@@ -6,19 +6,19 @@ interface TableRowProps {
   original: Transaction;
 }
 
-type TableCellValue = number | string | React.ReactNode;
+type TableCellType = number | string | React.ReactNode;
 
 interface TableCellProps {
-  value: TableCellValue;
+  value: TableCellType;
   label: string;
   className?: string;
   row: TableRowProps;
-  renderValue?: (arg: TableCellValue) => JSX.Element;
+  renderValue?: (arg: TableCellType) => JSX.Element;
 }
 
-interface Table {
+interface TableProps {
   columns: Column<Transaction>[];
   data: TransactionResponse;
 }
 
-export type { TableCellProps, Table, TableRowProps, TableCellValue };
+export type { TableCellProps, TableProps, TableRowProps, TableCellType };

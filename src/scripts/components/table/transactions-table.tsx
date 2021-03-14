@@ -3,7 +3,7 @@ import "../../../styles/components/table/transactions-table.scss";
 import { useMemo } from "react";
 import { Column } from "react-table";
 import useTransactions from "../../hooks/transactions/use-transactions";
-import { TableCellProps, TableCellValue } from "../../../types/table";
+import { TableCellProps, TableCellType } from "../../../types/table";
 import { Transaction } from "../../../types/transaction";
 import DataLoadingContext from "../contexts/data-loading-context";
 import ContentLoading from "../content-loading";
@@ -36,7 +36,7 @@ const TransactionsTable = () => {
     Cell: sourceColumnCell,
   };
 
-  const categoryColumnCell = (value: TableCellValue) => (
+  const categoryColumnCell = (value: TableCellType) => (
     <span className="transactions-table-category-wrapper">{value}</span>
   );
 
@@ -65,7 +65,7 @@ const TransactionsTable = () => {
     Cell: amountColumnCell,
   };
 
-  const dateColumnCell = (value: TableCellValue) => (
+  const dateColumnCell = (value: TableCellType) => (
     <TransactionsTableDate dateString={value} />
   );
 

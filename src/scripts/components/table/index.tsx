@@ -2,7 +2,7 @@ import "../../../styles/components/table/table.scss";
 
 import * as React from "react";
 import { useTable, useSortBy, Cell, HeaderGroup, Row } from "react-table";
-import { Table as TableProps } from "../../../types/table";
+import { TableProps } from "../../../types/table";
 import TableCellDescSort from "./table-cell-desc-sort";
 import { Transaction } from "../../../types/transaction";
 
