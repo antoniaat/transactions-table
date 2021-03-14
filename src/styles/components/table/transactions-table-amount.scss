@@ -5,16 +5,33 @@
 .transactions-table-amount {
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
+    font-size: 20px;
 
     @include for-tablet-landscape-up {
-        align-items: start;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, min-content);
+        grid-column-gap: 8px;
+        justify-content: start;
+        align-items: center;
+    }
+
+    &-wrapper,
+    &-currency {
+        order: 1;
+    }
+
+    &-value,
+    &-currency {
+        font-size: 16px;
+        font-weight: normal;
     }
 
     &-value {
         padding-right: 5px;
-        font-weight: bold;
-        font-size: 20px;
+        grid-column: 1 / span 2;
+        order: 2;
+        color: $gray-800;
     }
 
     &-incoming,

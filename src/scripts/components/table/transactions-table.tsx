@@ -3,18 +3,15 @@ import "../../../styles/components/table/transactions-table.scss";
 import { useMemo } from "react";
 import { Column } from "react-table";
 import useTransactions from "../../hooks/transactions/use-transactions";
-import {
-  TableCell as TableCellProps,
-  TableCellValue,
-} from "../../../types/table";
+import { TableCellProps, TableCellValue } from "../../../types/table";
 import { Transaction } from "../../../types/transaction";
 import DataLoadingContext from "../contexts/data-loading-context";
 import ContentLoading from "../content-loading";
 import TransactionsTableGateway from "./transactions-table-gateway";
+import TransactionsTableAmount from "./transactions-table-amount";
+import TransactionsTableDate from "./transactions-table-date";
 import TableCell from "./table-cell";
 import Table from "./index";
-import TransactionsTableDate from "./transactions-table-date";
-import TransactionsTableAmount from "./transactions-table-amount";
 
 const TransactionsTable = () => {
   const { isLoadingTransactions, transactions } = useTransactions();
@@ -58,23 +55,13 @@ const TransactionsTable = () => {
     ),
   };
 
-  const amountColumnCell = (props: TableCellProps) => {
-    const { amount, currency_code } = props.row.original;
-
-    return (
-      <TableCell
-        {...props}
-        className="transactions-table-amount"
-        label="amount"
-      >
-        <TransactionsTableAmount amount={amount} currencyCode={currency_code} />
-      </TableCell>
-    );
-  };
+  const amountColumnCell = (props: TableCellProps) => (
+    <TransactionsTableAmount row={props.row} />
+  );
 
   const amountColumn: Column<Transaction> = {
     Header: <ContentLoading text="Amount" isLoading={isLoadingTransactions} />,
-    accessor: "gateway",
+    accessor: "amount",
     Cell: amountColumnCell,
   };
 
