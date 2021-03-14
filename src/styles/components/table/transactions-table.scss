@@ -11,11 +11,4 @@
     @include for-desktop-up {
         margin: 120px auto;
     }
-
-    &-source {
-        display: grid;
-        grid-auto-flow: column;
-        align-items: center;
-        grid-template-columns: min-content 1fr;
-    }
 }
