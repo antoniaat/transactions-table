@@ -35,9 +35,10 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
                 {...column.getHeaderProps(column.getSortByToggleProps())}
               >
                 {column.render(tableHeader)}
-                {column.isSorted && (
-                  <TableCellDescSort isSortedDesc={column.isSortedDesc} />
-                )}
+                <TableCellDescSort
+                  isSorted={column.isSorted}
+                  isSortedDesc={column.isSortedDesc}
+                />
               </th>
             ))}
           </tr>
