@@ -1,6 +1,6 @@
 # Juni Transactions
 
-Simple transactions table build with [React.js](https://reactjs.org/), [react-table](https://react-table.tanstack.com) and [SCSS](https://sass-lang.com/).
+Simple transactions table build with [React.js](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [react-table](https://react-table.tanstack.com) and [SCSS](https://sass-lang.com/).
 
 ![image](https://user-images.githubusercontent.com/20865548/111077868-70428f00-84fb-11eb-915e-88386d99a5a0.png)
 
